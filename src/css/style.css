@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--syne-font);
+  font-weight: 800;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+:root {
+  --syne-font: 'Syne', sans-serif;
+  --pr-color: #f0e9e9;
+  --second-color: #0a0a0a;
+  --bg-color: #131313;
+  --cubicbz: cubic-bezier(.9, 0, .1, 1);
+  --fz-big: 60px;
+  --gap: 150px;
+}
+
+body {
+  background: var(--second-color);
+}
+
+/* Modelo */
+.wrapp {
+  position: relative;
+  width: 100%;
+  padding: 0 150px;
+}
+
+.title {
+  margin-bottom: 80px;
+  font-size: var(--fz-big);
+  text-transform: uppercase;
+  color: var(--pr-color);
+}
+
+.title span {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--pr-color);
+}
+
+/* Parte do Block Reveal em GSAP */
+.reveal {
+  padding: 80px 50px 0;
+}
+
+.reveal_img {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 150px;
+  width: 100%;
+  padding-bottom: 170px;
+}
+
+.reveal_img-item {
+  position: relative;
+  width: calc(50% - var(--gap));
+  height: 550px;
+  padding-left: 53px;
+  overflow: hidden;
+}
+
+.reveal_img-item:nth-child(even){
+  transform: translateY(150px);
+}
+
+.reveal_img-num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 40px;
+  color: var(--pr-color);
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+}
+
+.reveal_img-inner,
+.reveal_img-bl {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+.reveal_img-inner {
+  background: var(--bg-color);
+}
+
+.reveal_img-bl {
+  overflow: hidden;
+}
+
+.reveal_img-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
