@@ -27,7 +27,7 @@ body {
 .wrapp {
   position: relative;
   width: 100%;
-  padding: 0 150px;
+  padding: 0 8%;
 }
 
 .title {
@@ -59,13 +59,15 @@ body {
 
 .reveal_img-item {
   position: relative;
-  width: calc(50% - var(--gap));
+  width: calc(55% - var(--gap));
+  max-width: 100%;
+  min-width: 400px;
   height: 550px;
-  padding-left: 53px;
+  padding-left: 50px;
   overflow: hidden;
 }
 
-.reveal_img-item:nth-child(even){
+.reveal_img-item:nth-child(2n){
   transform: translateY(150px);
 }
 
@@ -100,4 +102,36 @@ body {
   height: 100%;
   object-fit: cover;
   will-change: transform;
+}
+
+@media (max-width: 1000px) {
+  :root{
+    --fz-big: 50px;
+    --gap: 80px;
+  }
+
+  .wrapp {
+    padding: 0 2%;
+  }
+}
+
+@media (max-width: 937px) {
+  :root{
+    --gap: 40px;
+  }
+
+  .reveal_img {
+    justify-content: center;
+  }
+
+  .reveal_img-item:nth-child(even){
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 450px) {
+  .reveal_img-item {
+    max-width: 100%;
+    min-width: 320px;
+  }
 }
